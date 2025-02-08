@@ -5,10 +5,10 @@
     "description": "CSE 341 API Documentation",
     "version": "1.0.0"
   },
-  "host": "localhost:5000",
+  "host": "hymnapi.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api/hymns/": {

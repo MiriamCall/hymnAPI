@@ -5,8 +5,8 @@ const doc = {
     title: "CSE 341 API Docs",
     description: "CSE 341 API Documentation",
   },
-  host: "localhost:5000",
-  schemes: ["http"],
+  host: "hymnapi.onrender.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger.json";
