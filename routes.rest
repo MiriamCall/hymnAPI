@@ -12,9 +12,9 @@ POST http://localhost:8080/api/users/ HTTP/1.1
 Content-Type: application/json
 
 {
-  "firstName": "John",
-  "lastName": "Doe",
-  "favorites": [123, 456]
+  "firstName": "Joe",
+  "lastName": "Van",
+  "favorites": [60, 56]
 }
 
 ###
@@ -86,7 +86,7 @@ GET https://hymnapi.onrender.com/api/users
 GET https://hymnapi.onrender.com/api/users/67a440f5e1706972dc9a8f70
 
 ###
-POST https://hymnapi.onrender.com/api/users/67a440f5e1706972dc9a8f6f HTTP/1.1
+POST https://hymnapi.onrender.com/api/users/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -95,7 +95,7 @@ Content-Type: application/json
     "favorites": [1,7,3]
 }
 
-PUT https://hymnapi.onrender.com/api/users HTTP/1.1
+PUT https://hymnapi.onrender.com/api/users/67a440f5e1706972dc9a8f70 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -103,7 +103,6 @@ Content-Type: application/json
   "lastName": "Smith",
   "favorites": [116, 301, 86]
 }
-
 
 ###
 DELETE https://hymnapi.onrender.com/api/users/67a440f5e1706972dc9a8f6f
