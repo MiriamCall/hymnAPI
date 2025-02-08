@@ -1,0 +1,27 @@
+{
+  "_id": "67a6f9af2a586eac8e0bb7e6",
+  "Title": "Battle Hymn of the Republic",
+  "Hymns Number": 60,
+  "Lyrics": {
+    "1": {
+      "verse": "Mine eyes have seen the glory of the coming of the Lord;\n\nHe is trampling out the vintage where the grapes of wrath are stored.\n\nHe hath loosed the fateful lightning of his terrible, swift sword;\n\nHis truth is marching on.",
+      "chorus": "Glory, glory, hallelujah!\n\nGlory, glory, hallelujah!\n\nGlory, glory, hallelujah!\n\nHis truth is marching on.",
+      "_id": "67a6fa297c12a4db302ddb9f"
+    },
+    "2": {
+      "verse": "He has sounded forth the trumpet that shall never call retreat;\n\nHe is sifting out the hearts of men before his judgment seat.\n\nOh, be swift, my soul, to answer him; be jubilant my feet!\n\nOur God is marching on.",
+      "chorus": "Glory, glory, hallelujah!\n\nGlory, glory, hallelujah!\n\nGlory, glory, hallelujah!\n\nHis truth is marching on.",
+      "_id": "67a6fa297c12a4db302ddba0"
+    },
+    "3": {
+      "verse": "In the beauty of the lilies, Christ was born across the sea,\n\nWith a glory in his bosom that transfigures you and me.\n\nAs he died to make men holy, let us live to make men free,\n\nWhile God is marching on.",
+      "chorus": "Glory, glory, hallelujah!\n\nGlory, glory, hallelujah!\n\nGlory, glory, hallelujah!\n\nHis truth is marching on.",
+      "_id": "67a6fa297c12a4db302ddba1"
+    }
+  },
+  "Text": "Julia Ward Howe, 1819–1910",
+  "Music": "Anon., ca. 1861",
+  "topics": ["Courage", "Jesus Christ"],
+  "scriptures": ["Alma 5:50", "Doctrine and Covenants 65:1–6"],
+  "webURL": "https://www.churchofjesuschrist.org/media/music/songs/battle-hymn-of-the-republic"
+}
