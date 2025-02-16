@@ -6,30 +6,32 @@ GET http://localhost:8080/api/users
 
 ###
 GET http://localhost:8080/api/users/67a440f5e1706972dc9a8f70
+###
+GET http://localhost:8080/api/users/invalidID123
 
 ###
 POST http://localhost:8080/api/users/ HTTP/1.1
 Content-Type: application/json
 
 {
-  "firstName": "Joe",
-  "lastName": "Van",
+  "firstName": "Jonah",
+  "lastName": "Passe",
   "favorites": [60, 56]
 }
 
 ###
-PUT http://localhost:8080/api/users/67a70ab07cc7e8f8bca84897 HTTP/1.1
+PUT http://localhost:8080/api/users/67b16abea1f3cdab0c497d00 HTTP/1.1
 Content-Type: application/json
 
 {
-  "firstName": "John",
-  "lastName": "Smith",
+  "firstName": "Jonah",
+  "lastName": "Passe",
   "favorites": [116, 301, 86]
 }
 
 
 ###
-DELETE http://localhost:8080/api/users/67a440f5e1706972dc9a8f6f
+DELETE http://localhost:8080/api/users/67b16abea1f3cdab0c497d00
 
 // Hymns Endpoints
 ### 
@@ -52,7 +54,7 @@ Content-Type: application/json
     "God's Love"
   ],
   "scriptures": "Romans 8:16",
-  "webURL": "https://www.churchofjesuschrist.org/music/library/childrens-songbook/i-am-a-child-of-god"
+  "webURL": "music/library/childrens-songbook/i-am-a-child-of-god"
 }
 
 ###
@@ -119,7 +121,7 @@ POST https://hymnapi.onrender.com/api/hymns/ HTTP/1.1
 Content-Type: application/json
 
 {
-  "title": "I Am a Child of God Test",
+  "title": "Children of God",
   "number": 301,
   "lyrics": "I am a child of God, and he has sent me here...",
   "composer": "Mildred T. Pettit",
