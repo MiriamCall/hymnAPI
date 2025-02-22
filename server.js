@@ -7,6 +7,19 @@ const { auth } = require("express-openid-connect");
 
 const app = express();
 
+// Auth0 Configuration
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.AUTH0_SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.AUTH0_CLIENT_ID,
+  issuerBaseURL: `https://${process.env.AUTH0_DOMAIN}`,
+};
+
+// Attach Auth0 authentication routes
+app.use(auth(config));
+
 // middleware
 app.use(express.json());
 app.use(cors());
@@ -27,19 +40,6 @@ connectToDatabase()
         message: err.message || "An error occurred. Please try again later.",
       });
     });
-
-    // Auth0 Configuration
-    const config = {
-      authRequired: false,
-      auth0Logout: true,
-      secret: process.env.AUTH0_SECRET,
-      baseURL: process.env.BASE_URL,
-      clientID: process.env.AUTH0_CLIENT_ID,
-      issuerBaseURL: `https://${process.env.AUTH0_DOMAIN}`,
-    };
-
-    // Attach Auth0 authentication routes
-    app.use(auth(config));
 
     // req.isAuthenticated is provided from the auth router
     app.get("/", (req, res) => {

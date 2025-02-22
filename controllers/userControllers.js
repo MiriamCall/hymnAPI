@@ -24,29 +24,50 @@ const getSingleUser = async (req, res) => {
   }
 };
 
-// Create a new user controller function (using OAuth data)
+// Create user controller function
 const createUser = async (req, res) => {
-  // Extract Auth0 OAuth data from the request (req.user)
-  const { sub, given_name, family_name } = req.user;
-
-  // Check if the user already exists based on the Auth0 ID
-  let user = await User.findOne({ auth0Id: sub });
-  if (user) {
-    return res.status(400).json({ message: "User already exists" });
-  }
-
-  // If the user doesn't exist, create a new user
-  user = new User({
-    auth0Id: sub, // Use the Auth0 ID as a unique identifier
-    firstName: given_name || "Unknown", // Default to "Unknown" if no first name is available
-    lastName: family_name || "User", // Default to "User" if no last name is available
-  });
-
   try {
+    // Extract Auth0 OAuth data from req.oidc.user instead of req.user
+    if (!req.oidc || !req.oidc.user) {
+      return res.status(400).json({ message: "Missing authentication data" });
+    }
+
+    const { sub, given_name, family_name } = req.oidc.user;
+
+    // Validate required OAuth data
+    if (!sub || !given_name || !family_name) {
+      return res.status(400).json({
+        message: "Missing required user data",
+        details: {
+          auth0Id: !sub ? "missing" : "present",
+          firstName: !given_name ? "missing" : "present",
+          lastName: !family_name ? "missing" : "present",
+        },
+      });
+    }
+
+    // Check for existing user
+    const existingUser = await User.findOne({ auth0Id: sub });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    // Create new user
+    const user = new User({
+      auth0Id: sub,
+      firstName: given_name,
+      lastName: family_name,
+      favorites: [], // Initialize empty favorites array
+    });
+
     const newUser = await user.save();
     res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    console.error("Error creating user:", error);
+    res.status(500).json({
+      message: "Error creating user",
+      details: error.message,
+    });
   }
 };
 
